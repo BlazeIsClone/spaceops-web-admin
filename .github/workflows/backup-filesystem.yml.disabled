@@ -46,7 +46,7 @@ jobs:
 
   call-workflow-backup-filesystem:
     name: Call Backup Database Workflow
-    uses: maya-hive/cloud-backup-pipeline/.github/workflows/filesystem.yml@v2.2.0 # Specify release version
+    uses: BlazeIsClone/cloud-backup-pipeline/.github/workflows/filesystem.yml@v2.2.0 # Specify release version
     secrets: inherit
     needs: vars
     with:
