@@ -38,13 +38,5 @@ Route::middleware(['verified.admin'])->group(function () {
 			Route::get('/post', 'post')
 				->middleware(Authorize::using(PageSettingRoutePath::POST))
 				->name(PageSettingRoutePath::POST);
-
-			Route::get('/contact', 'contact')
-				->middleware(Authorize::using(PageSettingRoutePath::CONTACT))
-				->name(PageSettingRoutePath::CONTACT);
-
-			Route::get('/inquiry', 'inquiry')
-				->middleware(Authorize::using(PageSettingRoutePath::INQUIRY))
-				->name(PageSettingRoutePath::INQUIRY);
 		});
 });

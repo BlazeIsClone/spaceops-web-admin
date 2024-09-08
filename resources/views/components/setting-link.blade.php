@@ -1,7 +1,7 @@
-@props(['name', 'settings'])
+@props(['name', 'settings', 'title' => 'Link'])
 
 <div class="mb-8">
-    <x-input-label :value="__('Link')" />
+    <x-input-label :value="__($title)" />
     <div class="rounded border p-10">
         @php $link = $settings->get($name); @endphp
 

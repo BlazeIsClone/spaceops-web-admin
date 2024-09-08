@@ -17,6 +17,14 @@ class PostCategoryService extends BaseService
 	}
 
 	/**
+	 * Get the model human readable name.
+	 */
+	public function modelName(): string
+	{
+		return 'log category';
+	}
+
+	/**
 	 * Get all resources.
 	 */
 	public function getAllPostCategories(): Collection

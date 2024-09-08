@@ -19,6 +19,14 @@ class PostService extends BaseService
 	}
 
 	/**
+	 * Get the model human readable name.
+	 */
+	public function modelName(): string
+	{
+		return 'log';
+	}
+
+	/**
 	 * Get all resources.
 	 */
 	public function getAllPosts(): Collection

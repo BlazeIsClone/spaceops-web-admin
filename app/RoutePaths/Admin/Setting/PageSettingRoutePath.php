@@ -13,10 +13,6 @@ class PageSettingRoutePath implements AdminRoutePathInterface
 
 	public const HOME = 'admin.page.custom.home';
 
-	public const CONTACT = 'admin.page.custom.contact';
-
-	public const INQUIRY = 'admin.page.custom.inquiry';
-
 	public const POST = 'admin.page.custom.post';
 
 	/**
@@ -34,9 +30,7 @@ class PageSettingRoutePath implements AdminRoutePathInterface
 	{
 		return [
 			'Edit Home' => [self::HOME],
-			'Edit Contact' => [self::CONTACT],
-			'Edit Inquiry' => [self::INQUIRY],
-			'Edit Post Listing' => [self::POST],
+			'Edit Log Listing' => [self::POST],
 		];
 	}
 }

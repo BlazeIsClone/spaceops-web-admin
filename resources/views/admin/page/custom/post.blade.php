@@ -20,12 +20,6 @@
                         </x-input-editor>
                         <x-input-error :messages="$errors->get('banner_content')" />
                     </div>
-
-                    <div class="col-xl-4">
-                        <x-input-label for="banner_image" :value="__('Banner Image')" />
-                        <x-input-file id="banner_image" name="banner_image" :fileMaxSize="2" :value="$settings->getMedia('banner_image')" />
-                        <x-input-error class="mt-2" :messages="$errors->get('banner_image')" />
-                    </div>
                 </div>
             </div>
 

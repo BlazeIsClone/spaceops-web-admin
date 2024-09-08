@@ -20,23 +20,11 @@
                         </x-input-editor>
                         <x-input-error :messages="$errors->get('banner_content')" />
                     </div>
-
-                    <div class="col-xl-4">
-                        <x-input-label for="banner_logo" :value="__('Banner Logo')" />
-                        <x-input-file id="banner_logo" name="banner_logo" :fileMaxSize="2" :value="$settings->getMedia('banner_logo')" />
-                        <x-input-error class="mt-2" :messages="$errors->get('banner_logo')" />
-                    </div>
-
-                    <div class="col-xl-4">
-                        <x-input-label for="banner_image" :value="__('Banner Image')" />
-                        <x-input-file id="banner_image" name="banner_image" :fileMaxSize="2" :value="$settings->getMedia('banner_image')" />
-                        <x-input-error class="mt-2" :messages="$errors->get('banner_image')" />
-                    </div>
                 </div>
             </div>
 
             <div class="accordion accordion-icon-toggle mt-8" id="kt_accordion_setting">
-                <x-setting-accordion :name="__('blog_section')" :title="__('Blog Section')" :$settings>
+                <x-setting-accordion :name="__('log_section')" :title="__('Log Section')" :$settings>
                     <div class="mb-8">
                         @php $field = 'post_content'; @endphp
                         <x-input-label for="{{ $field }}" :value="__('Content')" />
@@ -47,8 +35,8 @@
                     </div>
 
                     <div class="mb-8">
-                        <x-input-label for="post_items" :value="__('Posts')" />
-                        <x-input-select name="post_items[]" data-placeholder="Select Posts" data-hide-search="false"
+                        <x-input-label for="post_items" :value="__('Logs')" />
+                        <x-input-select name="post_items[]" data-placeholder="Select Logs" data-hide-search="false"
                             multiple>
                             @if ($posts->isNotEmpty())
                                 @foreach ($posts as $post)
@@ -60,6 +48,21 @@
                         </x-input-select>
                         <x-input-error :messages="$errors->get('post_items')" />
                     </div>
+                </x-setting-accordion>
+            </div>
+
+            <div class="accordion accordion-icon-toggle mt-4" id="kt_accordion_setting">
+                <x-setting-accordion :name="__('contact_section')" :title="__('Contact Section')" :$settings>
+                    <div class="mb-8">
+                        @php $field = 'contact_content'; @endphp
+                        <x-input-label for="{{ $field }}" :value="__('Content')" />
+                        <x-input-editor id="{{ $field }}" name="{{ $field }}">
+                            {{ old($field, $settings->get($field)) }}
+                        </x-input-editor>
+                        <x-input-error :messages="$errors->get($field)" />
+                    </div>
+
+                    <x-setting-link name="github_link" title="GitHub Link" :$settings />
                 </x-setting-accordion>
             </div>
 

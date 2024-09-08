@@ -9,8 +9,7 @@ class PageRoutePath implements AdminRoutePathInterface
 {
 	public function __construct(
 		protected PageService $pageService,
-	) {
-	}
+	) {}
 
 	public const INDEX = 'admin.page.index';
 

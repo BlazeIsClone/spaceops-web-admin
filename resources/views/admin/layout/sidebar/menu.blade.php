@@ -99,8 +99,7 @@
                 @endcanany
             @endif
 
-            @canany([PageSettingRoutePath::HOME, PageSettingRoutePath::CONTACT, PageSettingRoutePath::INQUIRY,
-                PageSettingRoutePath::POST])
+            @canany([PageSettingRoutePath::HOME, PageSettingRoutePath::POST])
                 @include('admin.layout.sidebar.menu-heading', ['content' => 'Pages'])
 
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -119,23 +118,9 @@
                             ])
                         @endcan
 
-                        @can(PageSettingRoutePath::CONTACT)
-                            @include('admin.layout.sidebar.menu-item', [
-                                'content' => 'Contact',
-                                'route' => PageSettingRoutePath::CONTACT,
-                            ])
-                        @endcan
-
-                        @can(PageSettingRoutePath::INQUIRY)
-                            @include('admin.layout.sidebar.menu-item', [
-                                'content' => 'Inquiry',
-                                'route' => PageSettingRoutePath::INQUIRY,
-                            ])
-                        @endcan
-
                         @can(PageSettingRoutePath::POST)
                             @include('admin.layout.sidebar.menu-item', [
-                                'content' => 'Post Listing',
+                                'content' => 'Log Listing',
                                 'route' => PageSettingRoutePath::POST,
                             ])
                         @endcan
